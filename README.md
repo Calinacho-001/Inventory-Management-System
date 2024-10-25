@@ -1,7 +1,5 @@
 # Inventory Management System (IMS)
 
-#### Video Demo: [Watch here](https://youtu.be/LNoSR1f3elE)
-
 ## Overview
 
 Welcome to the Inventory Management System (IMS), a robust and user-friendly application designed to help you manage your inventory effectively. This system is entirely command-line interface (CLI) based, making it lightweight and easily accessible without the need for a graphical user interface (GUI). The IMS is perfect for small businesses, hobbyists, or anyone needing a straightforward way to keep track of their products.
