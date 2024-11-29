@@ -1,4 +1,9 @@
 import app_gui
 
-app = app_gui.App()
-app.mainloop()
+
+def main():
+    app = app_gui.App()
+    app.mainloop()
+
+if __name__=="__main__":
+    main()

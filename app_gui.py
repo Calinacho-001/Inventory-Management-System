@@ -1,21 +1,23 @@
 import customtkinter as ctk
-from page_1 import Page1
-from page_2 import Page2
+from config import APP_TITLE, APP_VERSION
+from pg1_options import Page1_Options
+from pg2_inventory import Page2_Inventory
+
 
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.geometry("400x300")
-        self.title("Inventory Management System")
+        self.title(f"{APP_TITLE} {APP_VERSION}")
         # Create a dictionary to hold pages
         self.pages = {}
         
         # Add pages to dictionary
-        self.pages["Page1"] = Page1(self, self.switch_page)
-        self.pages["Page2"] = Page2(self)
+        self.pages["Page 1 - Options"] = Page1_Options(self, self.switch_page)
+        self.pages["Page 2 - Inventory"] = Page2_Inventory(self, self.switch_page)
 
         # Show the first page
-        self.pages["Page1"].pack(fill="both", expand=True)
+        self.pages["Page 1 - Options"].pack(fill="both", expand=True)
          
     def switch_page(self, page_name):
         """Switch between pages by packing the new page and hiding the current one."""
