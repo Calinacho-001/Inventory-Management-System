@@ -4,8 +4,8 @@ import customtkinter as ctk
 
 
 class Page2_Inventory(ctk.CTkFrame):
-    def __init__(self, master, switch_page_callback):
-        super().__init__(master)
+    def __init__(self, master, switch_page_callback, *args, **kwargs):
+        super().__init__(master, *args, **kwargs)
         self.switch_page_callback = switch_page_callback
         self.label = ctk.CTkLabel(self, text="Welcome to Page 2. Here are your options:")
         self.label.pack(padx=20, pady=20)

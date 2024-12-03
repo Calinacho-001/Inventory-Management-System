@@ -3,7 +3,7 @@ import app_gui
 
 def main():
     app = app_gui.App()
-    app.mainloop()
+    app.run()
 
 if __name__=="__main__":
     main()

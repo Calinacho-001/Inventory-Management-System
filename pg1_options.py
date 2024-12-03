@@ -1,15 +1,24 @@
 import customtkinter as ctk
 
+
 """PAGE 1 = OPTIONS PAGE"""
 
 class Page1_Options(ctk.CTkFrame):
-    def __init__(self, master, switch_page_callback):
-        super().__init__(master)
+    def __init__(self, master, switch_page_callback, *args, **kwargs):
+        super().__init__(master, *args, **kwargs)
         self.switch_page_callback = switch_page_callback
-        # Add buttons for navigating to Page 2
-        self.label = ctk.CTkLabel(self, text="Select an option:")
-        self.label.pack(padx=20, pady=20)
+        # self.label = ctk.CTkLabel(self, text="Select an option:")
+        # self.label.pack(anchor="w" ,padx=40, pady=35)
+        self.pg1_tabs()
         self.page_buttons()
+
+
+    def pg1_tabs(self):
+        tabs = ctk.CTkTabview(self)
+        tabs.pack(pady=10, padx=10)
+
+        tabs.add("Tab 1")  # First tab
+        tabs.add("Tab 2")  # Second tab
 
     def page_buttons(self):
         self.options_button()

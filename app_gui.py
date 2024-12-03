@@ -5,10 +5,14 @@ from pg2_inventory import Page2_Inventory
 
 
 class App(ctk.CTk):
-    def __init__(self):
-        super().__init__()
-        self.geometry("400x300")
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.resizable(False, False)
+        self.geometry("450x350")
         self.title(f"{APP_TITLE} {APP_VERSION}")
+        ctk.set_appearance_mode("dark")
+        self.get_mouse_coordinates()
+        
         # Create a dictionary to hold pages
         self.pages = {}
         
@@ -26,3 +30,18 @@ class App(ctk.CTk):
 
         self.pages[page_name].pack(fill="both", expand=True)  # Show the selected page
 
+
+    def get_mouse_coordinates(self):
+        """
+        Binds a left mouse button click to get the coordinates of the click
+        and prints the coordinates in the terminal.
+        """
+        def on_click(event):
+            x, y = event.x, event.y
+            print(f"Clicked at x: {x}, y: {y}")
+
+        self.bind("<Button-1>", on_click)
+
+
+    def run(self):
+        self.mainloop()
