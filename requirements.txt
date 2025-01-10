@@ -1,4 +1,0 @@
-pip install simple-colors
-pip install tabulate
-pip install pyfiglet
-
